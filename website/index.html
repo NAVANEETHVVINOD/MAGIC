@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGIC Booth</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Background -> s3.gif + noise overlay -->
+    <div class="bg-layer" style="background-image: url('/assets/s3.gif');"></div>
+    <div class="noise-overlay"></div>
+    <div class="vignette"></div>
+
+    <div class="container">
+
+        <header>
+            <h1 class="neon-text title">MAGIC Booth</h1>
+            <p class="subtitle neon-text-blue">Stranger Things Edition</p>
+        </header>
+
+        <main class="booth-layout">
+
+            <!-- Camera Feed -->
+            <section class="camera-section">
+                <div class="camera-frame">
+                    <img id="videoFeed" src="/api/video_feed" alt="Camera Feed">
+                    <div class="scanline"></div>
+                </div>
+
+                <div class="capture-controls">
+                    <button id="captureBtn" class="neon-btn red-glow">
+                        📸 CAPTURE
+                    </button>
+                    <div id="countdown" class="countdown-display hidden">3</div>
+                </div>
+            </section>
+
+            <!-- Sidebar Controls -->
+            <aside class="controls-sidebar">
+
+                <div class="control-group">
+                    <h3 class="neon-text-blue">MODE</h3>
+                    <div class="options mode-options">
+                        <button class="opt-btn active" data-mode="SINGLE">SINGLE</button>
+                        <button class="opt-btn" data-mode="BURST">BURST</button>
+                        <button class="opt-btn" data-mode="GIF">GIF</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3 class="neon-text-blue">FILTER</h3>
+                    <div class="options filter-options">
+                        <button class="opt-btn active" data-filter="NONE">NONE</button>
+                        <button class="opt-btn" data-filter="NOIR">NOIR</button>
+                        <button class="opt-btn" data-filter="NEON">NEON</button>
+                        <button class="opt-btn" data-filter="GLITCH">GLITCH</button>
+                        <button class="opt-btn" data-filter="RETRO">RETRO</button>
+                        <button class="opt-btn" data-filter="DREAMY">DREAMY</button>
+                    </div>
+                </div>
+
+            </aside>
+
+        </main>
+
+        <!-- Timeline Gallery -->
+        <section class="gallery-section">
+            <h2 class="neon-text">THE UPSIDE DOWN GALLERY</h2>
+            <div class="timeline" id="galleryTimeline">
+                <div id="emptyGallery" class="empty-gallery-state">No photos captured yet... The Upside Down is empty.
+                </div>
+                <!-- Gallery items injected here -->
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Fullscreen Modal for Print/Preview -->
+    <div id="photoModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <img id="modalImage" src="" alt="Fullscreen Photo">
+            <div class="modal-actions">
+                <button id="printBtn" class="neon-btn blue-glow">🖨️ PRINT</button>
+            </div>
+            <div id="printIndicator" class="print-indicator hidden">SENDING TO PRINTER...</div>
+        </div>
+    </div>
+
+    <!-- Stranger particles/sparks -->
+    <div id="particles"></div>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

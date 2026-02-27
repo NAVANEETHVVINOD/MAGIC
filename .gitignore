@@ -1,0 +1,20 @@
+# Python
+.venv
+venv/
+__pycache__/
+*.pyc
+storage/temp/
+storage/retry_queue/
+
+# Node
+node_modules/
+dist/
+
+# Env 
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
