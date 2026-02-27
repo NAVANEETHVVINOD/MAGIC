@@ -17,9 +17,9 @@ export default function CameraView() {
                         transition={{ duration: 2.5, repeat: Infinity }}
                         className="flex items-center gap-4 bg-black/40 px-8 py-4 rounded-xl border border-stranger-red/20 backdrop-blur-sm"
                     >
-                        <ThumbsUp size={32} className="text-stranger-red" />
-                        <span className="text-xl md:text-2xl font-sans tracking-[0.15em] text-white uppercase text-glow-red">
-                            Show thumbs up to capture
+                        <ThumbsUp size={32} className="text-stranger-red" fill="currentColor" />
+                        <span className="text-xl md:text-2xl font-sans tracking-[0.15em] text-stranger-red uppercase text-glow-red">
+                            SHOW THUMBS UP TO CAPTURE
                         </span>
                     </motion.div>
                 </div>

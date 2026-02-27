@@ -40,9 +40,9 @@ app = Flask(__name__)
 
 # Load Env
 from dotenv import load_dotenv
-load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend", ".env"))
-SUPABASE_URL = os.environ.get("VITE_SUPABASE_URL", "")
-SUPABASE_KEY = os.environ.get("VITE_SUPABASE_ANON_KEY", "")
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
+SUPABASE_URL = os.environ.get("SUPABASE_URL", os.environ.get("VITE_SUPABASE_URL", ""))
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", os.environ.get("VITE_SUPABASE_ANON_KEY", ""))
 
 # Initialize Workers
 supabase_worker = SupabaseManager(SUPABASE_URL, SUPABASE_KEY, upload_queue, shutdown_event)

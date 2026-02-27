@@ -58,10 +58,13 @@ class SupabaseManager:
             # Get public URL
             public_url = self.supabase.storage.from_(self.bucket).get_public_url(filename)
             
+            from datetime import datetime, timezone
+            
             # Insert to DB
             self.supabase.table(self.table).insert({
                 "filename": filename,
-                "url": public_url
+                "url": public_url,
+                "created_at": datetime.now(timezone.utc).isoformat()
             }).execute()
             
             # Enforce limit

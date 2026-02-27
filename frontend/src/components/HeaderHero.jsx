@@ -21,10 +21,17 @@ export default function HeaderHero() {
                 transition={{ duration: 1.5, ease: "easeOut" }}
                 className="relative z-10 flex flex-col items-center text-center mt-4"
             >
-                <h1 className="font-creep text-5xl md:text-7xl text-stranger-red text-glow-red animate-flicker tracking-widest leading-none m-0 p-0">
+                <h1
+                    className="font-creep text-6xl md:text-8xl tracking-widest leading-none m-0 p-0"
+                    style={{
+                        WebkitTextStroke: '2px #E50914',
+                        color: 'transparent',
+                        filter: 'drop-shadow(0 0 15px rgba(229,9,20,0.8))'
+                    }}
+                >
                     MAGIC
                 </h1>
-                <h2 className="font-sans text-sm md:text-md text-white mt-2 tracking-[0.2em] opacity-80 uppercase font-medium">
+                <h2 className="font-sans text-sm md:text-md text-white mt-4 tracking-[0.2em] opacity-90 uppercase font-medium">
                     IEEE Hackathon 2026
                 </h2>
             </motion.div>
